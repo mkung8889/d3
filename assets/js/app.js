@@ -1,4 +1,4 @@
-// // @TODO: YOUR CODE HERE!
+
  var svgWidth = 960;
  var svgHeight = 660;
 
@@ -59,13 +59,8 @@ d3.csv(url).then(function(newsData) {
         .attr("fill", "blue")
         .attr("opacity", 0.75)
         .attr("stroke-width", "1")
-        .attr("stroke", "black")
-        // .append("text")
-        // .attr("text-anchor", "middle")
-        // .attr("fill", "#000")
-        // .text(function(d) {return d.abbr})
 
-    chartGroup.selectAll(".abbr")
+    var textGroup = chartGroup.selectAll(".abbr")
         .data(newsData)
         .enter()
         .append("text")
@@ -76,44 +71,16 @@ d3.csv(url).then(function(newsData) {
         .attr("fill", "white")
         .attr("font-size", "9px");
 
-    // circlesGroup.append("text")
-    //     .attr("text-anchor", "middle")
-    //     .attr("fill","black")
-    //     .attr("dy","-2em")
-    //     .text(d=> d.abbr)
-
-    // chartGroup.selectAll("text")
-    //     .data(newsData)
-    //     .enter()
-    //     .append("text")
-    //     .attr("dx", d => xLinearScale(d.poverty))
-    //     .attr("dy", d => yLinearScale(d.healthcare))
-    //     .text(d=> d.abbr)
-
-    // var text = circlesGroup.selectAll("text")
-    //     .data(newData)
-    //     .enter()
-    //     .append("text")
-    //     .attr("text-anchor", "middle")
-    //     .text(d=> {d.abbr})
 
     var labelsGroup = chartGroup.append("g")
         .attr("transform", `translate(${chartWidth/2}, ${chartHeight+15})`)
 
-    var povertyLabel = labelsGroup.append("text")
+    var povertyLabel = chartGroup.append("text")
         .attr("x", chartWidth/2)
         .attr("y", chartHeight+35)
-        // .attr("value", "poverty")
-        // .classed("active", true)
         .text("In Poverty %")
-    // var povertyLabel = chartGroup.append("text")
-    //     .attr("x", chartWidth/2)
-    //     .attr("y", chartHeight+35)
-    //     // .attr("value", "poverty")
-    //     // .classed("active", true)
-    //     .text("In Poverty %")
     
-    chartGroup.append("text")
+    var healthcareLabel =  chartGroup.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 0-chartMargin.left)
         .attr("x", 0-(chartHeight/2))
