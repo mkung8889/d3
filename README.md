@@ -10,3 +10,8 @@ Technologies used:
 -CSS
 
 Data Source: U.S. Census Bureau and the Behavioral Risk Factor Surveillance System
+
+Screenshots:
+![Lacks Healthcare vs. In Poverty](screenshots/vs_Poverty.png)
+![Lacks Healthcare vs. Age](screenshots/vs_Age.png)
+![Lacks Healthcare vs. Household Income](screenshots/vs_Income.png)
